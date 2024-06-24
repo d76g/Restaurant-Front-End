@@ -11,15 +11,19 @@
     <script>
         tailwind.config = {
           theme: {
-            extend: {
+            
               colors: {
                 mainColor: '#045e9e',
                 secondColor: '#339bcc',
                 thirdColor:'#0484c3',
                 buttonColor:'#16537a',
                 secondButtonColor:'#6bbcdd'
-              }
-            }
+              },
+                fontFamily: {
+                    sans: ['Playwrite AU NSW', 'sans-serif'],
+                    serif: ['Alex Brush', 'cursive'],
+                    mono: ['Shadows Into Light', 'cursive'],
+                }
           }
         }
       </script>
@@ -48,12 +52,21 @@
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+AU+NSW:wght@100..400&display=swap" rel="stylesheet">
        <!-- Tailwind CSS CDN -->
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <!-- Bootstrap CSS CDN -->
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Font Awesome for Social Media Icons -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for Social Media Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
 <body>
     <!-- Navbar -->
@@ -62,24 +75,29 @@
             <div class="w-6 h-6">
                 <img src="./images/united-kingdom.png" alt="English">
             </div>
+            <!-- 
             <div class="">
                 <img src="./images/chinese.png" alt="Chinese" class="w-6 h-6">
             </div>
+            -->
         </div>
      </div>
     <nav class="bg-mainColor text-white py-4 z-40">
-        <div class="container mx-auto flex justify-evenly items-center">
+        <div class="container mx-auto flex w-3/4 justify-between">
+            <img src="./images/company-logo.jpg" alt="Logo" class="h-28 absolute left-5 top-10 rounded-lg z-50">
             <div class="flex items-center">
-                <img src="./images/company-logo.jpg" alt="Logo" class="h-28 absolute left-5 top-10 rounded-lg z-50">
-                <ul class="flex space-x-4">
-                    <li><a href="#home" class="hover:text-gray-300">Home</a></li>
-                    <li><a href="#menu" class="hover:text-gray-300">Menu</a></li>
-                    <li><a href="#about" class="hover:text-gray-300">About Us</a></li>
-                    <li><a href="#reserve" class="hover:text-gray-300">Reserve Now</a></li>
+                <ul class="flex space-x-4 font-sans font-bold">
+                    <li><a href="#home" class="hover:text-gray-200 hover:scale-110 transition ease-in-out">Home</a></li>
+                    <li><a href="#menu" class="hover:text-gray-200 hover:scale-110 transition ease-in-out">Menu</a></li>
+                    <li><a href="#about" class="hover:text-gray-200 hover:scale-110 transition ease-in-out">About Us</a></li>
+                    <li><a href="#contact" class="hover:text-gray-200 hover:scale-110 transition ease-in-out">Contact Us</a></li>
                 </ul>
             </div>
             <div class="flex items-center space-x-4">
-                <button class="myBtn bg-secondButtonColor text-white px-4 py-2 rounded hover:bg-yellow-600">Reserve Now</button>
+                <button class="text-white select-none rounded-lg border border-gray-900 py-3 px-6
+                 text-center align-middle font-sans text-xs font-bold uppercase
+                  transition-all  focus:ring focus:ring-gray-300 active:opacity-[0.85] hover:scale-105 transition ease-in-out
+                   disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none hover:bg-secondButtonColor ml-10">Reserve Now</button>
             </div>
         </div>
     </nav>
@@ -88,51 +106,133 @@
     <section id="home" class="relative bg-cover bg-center h-screen z-30" >
         <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('./images/homeBackground-2.jpg'); filter: blur(2px);"></div>
         <div class="container mx-auto h-full flex flex-col justify-center items-center text-center text-white relative z-10">
-            <h1 class="text-7xl font-bold mb-4" style="font-family: Alex Brush, cursive;">Molveno Lake Resort</h1>
-            <p class="text-2xl mb-8">Experience the best dining with us</p>
-            <button class="myBtn bg-mainColor text-white px-6 py-3 rounded hover:bg-yellow-600">Reserve Now</button>
+            <h1 class="text-7xl font-bold mb-4 font-serif">Molveno Lake Resort</h1>
+            <p class="text-2xl mb-8 font-sans">Experience the best dining with us</p>
+            <button class="text-white select-none rounded-lg border border-gray-900 py-3 px-6
+                 text-center align-middle font-sans text-xs font-bold uppercase
+                  transition-all  focus:ring focus:ring-gray-300 active:opacity-[0.85] hover:scale-105 transition ease-in-out
+                   disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none hover:bg-secondButtonColor">Reserve Now</button>
         </div>
     </section>
     
 
     <!-- Menu Section -->
-    <section id="menu" class="py-16 bg-gray-100 h-[500px]">
+    <section id="menu" class="py-12 bg-gray-100 h-[710px]">
         <div class="container mx-auto flex flex-col justify-center w-5/6">
-            <div class="flex w-full justify-center items-center gap-x-4 mb-6">
-                <div class="bg-mainColor w-24 h-8 text-center text-white font-serif rounded-sm pt-1 hover:bg-secondColor hover:scale-110">
+            <div>
+                <h2 class="text-4xl font-mono text-center mb-3">Our best dishes</h2>
+            </div>
+            <div class="flex w-full justify-center items-center gap-x-4 mb-3 font-sans">
+                <div class="bg-mainColor w-32 h-10 text-center text-white text-xl 
+                 rounded-sm  flex justify-center items-center hover:bg-secondColor hover:scale-110 transition ease-in-out">
                     <p>Breakfast</p>
                 </div>
-                <div class="bg-mainColor w-24 h-8 text-center text-white font-serif rounded-sm pt-1 hover:bg-secondColor hover:scale-110">Lunch</div>
-                <div class="bg-mainColor w-24 h-8 text-center text-white font-serif rounded-sm pt-1 hover:bg-secondColor hover:scale-110">Dinner</div>
+                <div class="bg-mainColor w-32 h-10 text-center text-white text-xl 
+                 rounded-sm  flex justify-center items-center hover:bg-secondColor hover:scale-110 transition ease-in-out">
+                    <p>Lunch</p>
+                </div>
+                <div class="bg-mainColor w-32 h-10 text-center text-white text-xl 
+                 rounded-sm  flex justify-center items-center hover:bg-secondColor hover:scale-110 transition ease-in-out">
+                     <p>Dinner</p>
+                </div>
             </div>
-            <div class="grid grid-cols-3 w-full content-center justify-items-center">
-                <div class="bg-secondColor w-72 h-56 rounded-md">
-                    <div class="w-full h-full">
-                        <div class="w-full h-3/4 bg-cover bg-center rounded-t-md"  style="background-image: url(./images/west-lake-fish.jpg)">
-                        </div>
-                        <div class="w-full h-1/4 flex justify-center items-center font-serif text-white font-bold">
-                            <p>West Lake Vinegar Fish</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-secondColor w-72 h-56 rounded-md">
-                    <div class="w-full h-full">
-                        <div class="w-full h-3/4 bg-cover bg-center rounded-t-md"  style="background-image: url(./images/west-lake-fish.jpg)">
-                        </div>
-                        <div class="w-full h-1/4 flex justify-center items-center font-serif text-white font-bold">
-                            <p>West Lake Vinegar Fish</p>
+            <div class="grid grid-cols-3 gap-4 w-full h-auto content-center justify-items-center">
+                <a href="#menu">
+                    <div class="bg-secondColor w-72 h-56 rounded-md group hover:scale-105 transition ease-in-out">
+                        <div class="w-full h-full">
+                            <div class="relative w-full h-full bg-cover bg-center rounded-md group" style="background-image: url(./images/west-lake-fish.jpg)">
+                                <div class="absolute z-40 text-white text-lg flex items-end justify-center w-full h-full font-mono ">
+                                    <p class="bg-secondColor px-1 rounded-sm group-hover:hidden mb-3 transition ease-in-out">West Lake Vinegar Fish</p>
+                                    <div class="justify-center items-center w-full h-full  transition ease-in-out duration-700 hidden group-hover:flex">
+                                        <p class="text-center font-sans">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae debitis tempore exercitationem voluptatem animi nihil.</p>
+                                    </div>
+                                </div>
+                                <div class="absolute z-10 bg-black w-full h-full opacity-25 hidden group-hover:block transition ease-in-out rounded-md"></div>                      
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="bg-secondColor w-72 h-56 rounded-md">
-                    <div class="w-full h-full">
-                        <div class="w-full h-3/4 bg-cover bg-center rounded-t-md"  style="background-image: url(./images/west-lake-fish.jpg)">
-                        </div>
-                        <div class="w-full h-1/4 flex justify-center items-center font-serif text-white font-bold">
-                            <p>West Lake Vinegar Fish</p>
+                </a>
+                <a href="#menu">
+                    <div class="bg-secondColor w-72 h-56 rounded-md group hover:scale-105 transition ease-in-out">
+                        <div class="w-full h-full">
+                            <div class="relative w-full h-full bg-cover bg-center rounded-md group" style="background-image: url(./images/west-lake-fish.jpg)">
+                                <div class="absolute z-40 text-white text-lg flex items-end justify-center w-full h-full font-mono ">
+                                    <p class="bg-secondColor px-1 rounded-sm group-hover:hidden mb-3 transition ease-in-out">West Lake Vinegar Fish</p>
+                                    <div class="justify-center items-center w-full h-full  transition ease-in-out duration-700 hidden group-hover:flex">
+                                        <p class="text-center font-sans">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae debitis tempore exercitationem voluptatem animi nihil.</p>
+                                    </div>
+                                </div>
+                                <div class="absolute z-10 bg-black w-full h-full opacity-25 hidden group-hover:block transition ease-in-out rounded-md"></div>                      
+                            </div>
                         </div>
                     </div>
-                </div>
+                </a>
+                <a href="#menu">
+                    <div class="bg-secondColor w-72 h-56 rounded-md group hover:scale-105 transition ease-in-out">
+                        <div class="w-full h-full">
+                            <div class="relative w-full h-full bg-cover bg-center rounded-md group" style="background-image: url(./images/west-lake-fish.jpg)">
+                                <div class="absolute z-40 text-white text-lg flex items-end justify-center w-full h-full font-mono ">
+                                    <p class="bg-secondColor px-1 rounded-sm group-hover:hidden mb-3 transition ease-in-out">West Lake Vinegar Fish</p>
+                                    <div class="justify-center items-center w-full h-full  transition ease-in-out duration-700 hidden group-hover:flex">
+                                        <p class="text-center font-sans">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae debitis tempore exercitationem voluptatem animi nihil.</p>
+                                    </div>
+                                </div>
+                                <div class="absolute z-10 bg-black w-full h-full opacity-25 hidden group-hover:block transition ease-in-out rounded-md"></div>                      
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#menu">
+                    <div class="bg-secondColor w-72 h-56 rounded-md group hover:scale-105 transition ease-in-out">
+                        <div class="w-full h-full">
+                            <div class="relative w-full h-full bg-cover bg-center rounded-md group" style="background-image: url(./images/west-lake-fish.jpg)">
+                                <div class="absolute z-40 text-white text-lg flex items-end justify-center w-full h-full font-mono ">
+                                    <p class="bg-secondColor px-1 rounded-sm group-hover:hidden mb-3 transition ease-in-out">West Lake Vinegar Fish</p>
+                                    <div class="justify-center items-center w-full h-full  transition ease-in-out duration-700 hidden group-hover:flex">
+                                        <p class="text-center font-sans">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae debitis tempore exercitationem voluptatem animi nihil.</p>
+                                    </div>
+                                </div>
+                                <div class="absolute z-10 bg-black w-full h-full opacity-25 hidden group-hover:block transition ease-in-out rounded-md"></div>                      
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#menu">
+                    <div class="bg-secondColor w-72 h-56 rounded-md group hover:scale-105 transition ease-in-out">
+                        <div class="w-full h-full">
+                            <div class="relative w-full h-full bg-cover bg-center rounded-md group" style="background-image: url(./images/west-lake-fish.jpg)">
+                                <div class="absolute z-40 text-white text-lg flex items-end justify-center w-full h-full font-mono ">
+                                    <p class="bg-secondColor px-1 rounded-sm group-hover:hidden mb-3 transition ease-in-out">West Lake Vinegar Fish</p>
+                                    <div class="justify-center items-center w-full h-full  transition ease-in-out duration-700 hidden group-hover:flex">
+                                        <p class="text-center font-sans">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae debitis tempore exercitationem voluptatem animi nihil.</p>
+                                    </div>
+                                </div>
+                                <div class="absolute z-10 bg-black w-full h-full opacity-25 hidden group-hover:block transition ease-in-out rounded-md"></div>                      
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#menu">
+                    <div class="bg-secondColor w-72 h-56 rounded-md group hover:scale-105 transition ease-in-out">
+                        <div class="w-full h-full">
+                            <div class="relative w-full h-full bg-cover bg-center rounded-md group" style="background-image: url(./images/west-lake-fish.jpg)">
+                                <div class="absolute z-40 text-white text-lg flex items-end justify-center w-full h-full font-mono ">
+                                    <p class="bg-secondColor px-1 rounded-sm group-hover:hidden mb-3 transition ease-in-out">West Lake Vinegar Fish</p>
+                                    <div class="justify-center items-center w-full h-full  transition ease-in-out duration-700 hidden group-hover:flex">
+                                        <p class="text-center font-sans">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae debitis tempore exercitationem voluptatem animi nihil.</p>
+                                    </div>
+                                </div>
+                                <div class="absolute z-10 bg-black w-full h-full opacity-25 hidden group-hover:block transition ease-in-out rounded-md"></div>                      
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="flex justify-center items-center pt-3">
+                <button class="bg-secondButtonColor text-white rounded-lg border border-gray-900 py-3 px-6
+                 text-center align-middle font-sans text-sm 
+                  transition-all  hover:scale-105 transition ease-in-out
+                   ">View Full Menu</button>
             </div>
         </div>
     </section>
